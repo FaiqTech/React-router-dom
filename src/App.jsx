@@ -6,6 +6,8 @@ import About from "./pages/about";
 import Contact from "./pages/contact";
 import NotFound from "./pages/404";
 import CustomNavbar from "./Components/CustomNavbar";
+import SingleProduct from "./pages/services/SingleProduct";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (
@@ -14,6 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/services" element={<Services />} />
+        <Route path="/services/:id" element={<SingleProduct />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<NotFound />} />
