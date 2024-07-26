@@ -17,6 +17,4 @@ nav ul li a {
 
 nav ul li a.active {
   background-color: #f0f0f0;
-  color: red;
-  font-weight: bold;
 }

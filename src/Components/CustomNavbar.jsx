@@ -5,10 +5,10 @@ import "./customNavbar.css";
 function CustomNavbar() {
   // Naviqasiya linklərini tərtib edirik
   const links = [
-    { id: 1, path: "/", text: "Home" },
-    { id: 2, path: "/services", text: "Services" },
-    { id: 3, path: "/about", text: "About" },
-    { id: 4, path: "/contact", text: "Contact" },
+    { path: "/", text: "Home" },
+    { path: "/services", text: "Services" },
+    { path: "/about", text: "About" },
+    { path: "/contact", text: "Contact" },
   ];
 
   // Linkin aktiv olub olmadığını yoxlayan funksiya
@@ -28,7 +28,7 @@ function CustomNavbar() {
     <nav>
       <ul>
         {links.map((link) => (
-          <li key={link.id}>
+          <li key={link.path}>
             <NavLink
               to={link.path}
               className={getClassName}

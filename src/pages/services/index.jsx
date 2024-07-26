@@ -3,6 +3,7 @@ import { CardTitle } from "reactstrap";
 import React from "react";
 import data from "./data.json";
 import { Container, Row } from "reactstrap";
+import { Link } from "react-router-dom";
 
 function Services() {
   console.log(data);
@@ -15,8 +16,8 @@ function Services() {
             <Card>
               <CardHeader>{item.name}</CardHeader>
               <CardBody>
-                <CardTitle>{item.name}</CardTitle>
-                <CardText>{item.id}</CardText>
+                <Link to={`/services/${item.id}`}>Navigate to product</Link>
+                {item.name}
               </CardBody>
             </Card>
           </Col>
