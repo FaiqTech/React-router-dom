@@ -12,19 +12,52 @@ import Login from "./Components/login/Login";
 import Profile from "./pages/profile/Profile";
 
 function App() {
+  const routes = [
+    {
+      path: "/",
+      element: <Home />,
+    },
+    {
+      path: "/services",
+      element: <Services />,
+    },
+    {
+      path: "/services/:id",
+      element: <SingleProduct />,
+    },
+    {
+      path: "/about",
+      element: <About />,
+    },
+    {
+      path: "/contact",
+      element: <Contact />,
+    },
+    {
+      path: "/login",
+      element: <Login />,
+    },
+    {
+      path: "/profile",
+      element: <Profile />,
+    },
+    {
+      path: "/profile/:username",
+      element: <Profile />,
+    },
+    {
+      path: "*",
+      element: <NotFound />,
+    },
+  ];
+
   return (
     <BrowserRouter>
       <CustomNavbar />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/services/:id" element={<SingleProduct />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/profile/:username" element={<Profile />} />
-        <Route path="*" element={<NotFound />} />
+        {routes.map((route, index) => (
+          <Route key={index} path={route.path} element={route.element}></Route>
+        ))}
       </Routes>
     </BrowserRouter>
   );
