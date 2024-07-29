@@ -1,5 +1,4 @@
 import { Card, CardBody, CardHeader, CardText, Col } from "reactstrap";
-import { CardTitle } from "reactstrap";
 import React from "react";
 import data from "./data.json";
 import { Container, Row } from "reactstrap";

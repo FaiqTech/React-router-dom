@@ -9,6 +9,8 @@ function CustomNavbar() {
     { path: "/services", text: "Services" },
     { path: "/about", text: "About" },
     { path: "/contact", text: "Contact" },
+    { path: "/login", text: "Login" },
+    { path: "/profile", text: "Profile" },
   ];
 
   // Linkin aktiv olub olmadığını yoxlayan funksiya
