@@ -10,6 +10,7 @@ import SingleProduct from "./pages/services/SingleProduct";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Login from "./Components/login/Login";
 import Profile from "./pages/profile/Profile";
+import Layout from "./Components/layout/layout";
 
 function App() {
   const routes = [
@@ -56,7 +57,11 @@ function App() {
       <CustomNavbar />
       <Routes>
         {routes.map((route, index) => (
-          <Route key={index} path={route.path} element={route.element}></Route>
+          <Route
+            key={index}
+            path={route.path}
+            element={<Layout>{route.element}</Layout>}
+          />
         ))}
       </Routes>
     </BrowserRouter>

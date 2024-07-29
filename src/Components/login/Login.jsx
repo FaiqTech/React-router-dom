@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import {
@@ -31,6 +31,7 @@ const LoginForm = () => {
     setLoading(true);
     try {
       await new Promise((resolve) => setTimeout(resolve, 2000));
+      localStorage.setItem("login", data.username); // Simulate login
       navigate(`/profile/${data.username}`);
     } catch (error) {
       console.error("Submission error:", error);
@@ -52,9 +53,7 @@ const LoginForm = () => {
                 name="username"
                 control={control}
                 defaultValue=""
-                rules={{
-                  required: "İstifadəçi adı tələb olunur",
-                }}
+                rules={{ required: "İstifadəçi adı tələb olunur" }}
                 render={({ field }) => (
                   <Input
                     {...field}
@@ -63,7 +62,6 @@ const LoginForm = () => {
                     type="text"
                     invalid={!!errors.username && (isDirty || isTouched)}
                     aria-describedby="usernameHelp"
-                    onChange={(e) => field.onChange(e)}
                   />
                 )}
               />
@@ -93,7 +91,6 @@ const LoginForm = () => {
                     type="password"
                     invalid={!!errors.password && (isDirty || isTouched)}
                     aria-describedby="passwordHelp"
-                    onChange={(e) => field.onChange(e)}
                   />
                 )}
               />
